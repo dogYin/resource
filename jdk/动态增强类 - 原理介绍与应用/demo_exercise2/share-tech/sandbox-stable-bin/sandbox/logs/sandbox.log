@@ -1,0 +1,129 @@
+2020-07-10 10:51:13 default INFO  
+     ___     ____  __      ____    _    _   _ ____  ____   _____  __
+    | \ \   / /  \/  |    / ___|  / \  | \ | |  _ \| __ ) / _ \ \/ /
+ _  | |\ \ / /| |\/| |____\___ \ / _ \ |  \| | | | |  _ \| | | \  /
+| |_| | \ V / | |  | |_____|__) / ___ \| |\  | |_| | |_) | |_| /  \
+ \___/   \_/  |_|  |_|    |____/_/   \_\_| \_|____/|____/ \___/_/\_\
+2020-07-10 10:51:13 default INFO  initializing logback success. file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\cfg\sandbox-logback.xml;
+2020-07-10 10:51:13 default INFO  initializing server. cfg=;mode=attach;sandbox_home=E:\\ucarinc_workspace\\self\\demo_exercise2\\share-tech\\sandbox-stable-bin\\sandbox;user_module=E:\\ucarinc_workspace\\self\\demo_exercise2\\share-tech\\sandbox-stable-bin\\sandbox\\sandbox-module\;~/.sandbox-module\;;cfg=E:\\ucarinc_workspace\\self\\demo_exercise2\\share-tech\\sandbox-stable-bin\\sandbox\\cfg;provider=E:\\ucarinc_workspace\\self\\demo_exercise2\\share-tech\\sandbox-stable-bin\\sandbox\\provider;namespace=default;server.port=8082;system_module=E:\\ucarinc_workspace\\self\\demo_exercise2\\share-tech\\sandbox-stable-bin\\sandbox\\module;unsafe.enable=true;server.charset=UTF-8;
+2020-07-10 10:51:13 default INFO  loading provider[com.alibaba.jvm.sandbox.provider.api.ModuleJarLoadingChain] was success from provider-jar[E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\provider\sandbox-mgr-provider.jar], impl=com.alibaba.jvm.sandbox.provider.mgr.EmptyModuleJarLoadingChain
+2020-07-10 10:51:13 default INFO  loading provider[com.alibaba.jvm.sandbox.provider.api.ModuleLoadingChain] was success from provider-jar[E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\provider\sandbox-mgr-provider.jar], impl=com.alibaba.jvm.sandbox.provider.mgr.EmptyModuleLoadingChain
+2020-07-10 10:51:13 default INFO  loading provider-jar[E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\provider\sandbox-mgr-provider.jar] was success.
+2020-07-10 10:51:15 default INFO  initializing ws-http-handler. path=/sandbox/default/module/websocket/*
+2020-07-10 10:51:15 default INFO  initializing http-handler. path=/sandbox/default/module/http/*
+2020-07-10 10:51:15 default INFO  jetty-8.y.z-SNAPSHOT
+2020-07-10 10:51:15 default INFO  Started SelectChannelConnector@127.0.0.1:8082
+2020-07-10 10:51:15 default INFO  resetting all loaded modules:[]
+2020-07-10 10:51:15 default INFO  force unloading all loaded modules:[]
+2020-07-10 10:51:15 default INFO  loading module-lib=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module, found 1 module-jar files : E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar
+2020-07-10 10:51:15 default INFO  prepare loading module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  IMLCB: found new module, prepare to load. module=sandbox-control;class=class com.alibaba.jvm.sandbox.module.mgr.ControlModule;loader=ModuleJarClassLoader[crc32=681227813;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;];
+2020-07-10 10:51:15 default INFO  loading module, module=sandbox-control;class=com.alibaba.jvm.sandbox.module.mgr.ControlModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  active module when OnLoad, module=sandbox-control
+2020-07-10 10:51:15 default INFO  active module, module=sandbox-control;class=com.alibaba.jvm.sandbox.module.mgr.ControlModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  IMLCB: found new module, prepare to load. module=sandbox-info;class=class com.alibaba.jvm.sandbox.module.mgr.InfoModule;loader=ModuleJarClassLoader[crc32=681227813;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;];
+2020-07-10 10:51:15 default INFO  loading module, module=sandbox-info;class=com.alibaba.jvm.sandbox.module.mgr.InfoModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  active module when OnLoad, module=sandbox-info
+2020-07-10 10:51:15 default INFO  active module, module=sandbox-info;class=com.alibaba.jvm.sandbox.module.mgr.InfoModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  IMLCB: found new module, prepare to load. module=sandbox-module-mgr;class=class com.alibaba.jvm.sandbox.module.mgr.ModuleMgrModule;loader=ModuleJarClassLoader[crc32=681227813;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;];
+2020-07-10 10:51:15 default INFO  loading module, module=sandbox-module-mgr;class=com.alibaba.jvm.sandbox.module.mgr.ModuleMgrModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  active module when OnLoad, module=sandbox-module-mgr
+2020-07-10 10:51:15 default INFO  active module, module=sandbox-module-mgr;class=com.alibaba.jvm.sandbox.module.mgr.ModuleMgrModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:15 default INFO  loaded module-jar completed, loaded 3 module in module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar, modules=[sandbox-control, sandbox-info, sandbox-module-mgr]
+2020-07-10 10:51:15 default INFO  loading module-lib=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar, found 1 module-jar files : E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar
+2020-07-10 10:51:15 default INFO  prepare loading module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar;
+2020-07-10 10:51:16 default INFO  IMLCB: found new module, prepare to load. module=test-module-1;class=class com.alibaba.jvm.sandbox.module.testservice.TestServiceImplModule;loader=ModuleJarClassLoader[crc32=2049065845;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar;];
+2020-07-10 10:51:16 default INFO  loading module, module=test-module-1;class=com.alibaba.jvm.sandbox.module.testservice.TestServiceImplModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar;
+2020-07-10 10:51:16 default INFO  active module when OnLoad, module=test-module-1
+2020-07-10 10:51:16 default INFO  active module, module=test-module-1;class=com.alibaba.jvm.sandbox.module.testservice.TestServiceImplModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar;
+2020-07-10 10:51:16 default INFO  watch=1000 in module=test-module-1 found 1 classes for watch(ing).
+2020-07-10 10:51:16 default INFO  rewrite method com.yucx.exercise.service.TestServiceImpl#getRandomVal(java.lang.Integer) for listener[id=1001];event=BEFORE,RETURN,THROWS,IMMEDIATELY_RETURN,IMMEDIATELY_THROWS;
+2020-07-10 10:51:16 default INFO  transform com/yucx/exercise/service/TestServiceImpl finished, by module=test-module-1 in loader=sun.misc.Launcher$AppClassLoader@18b4aac2
+2020-07-10 10:51:16 default INFO  watch=1000 in module=test-module-1 single reTransform class com.yucx.exercise.service.TestServiceImpl success, at index=0;total=1;
+2020-07-10 10:51:16 default INFO  activated listener[id=1001;target=com.alibaba.jvm.sandbox.api.listener.ext.AdviceAdapterListener@ed5456c;] event=BEFORE,RETURN,THROWS,IMMEDIATELY_RETURN,IMMEDIATELY_THROWS
+2020-07-10 10:51:16 default INFO  loaded module-jar completed, loaded 1 module in module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar, modules=[test-module-1]
+2020-07-10 10:51:16 default INFO  initialized server. actual bind to 127.0.0.1:8082
+2020-07-10 10:51:16 default INFO  server[127.0.0.1:8082] bind success.
+2020-07-10 10:51:21 default WARN  on-event: event|BEFORE|1000|1000|1001 occur an error.
+java.lang.NullPointerException: null
+	at com.alibaba.jvm.sandbox.module.testservice.TestServiceImplModule$1.before(TestServiceImplModule.java:33)
+	at com.alibaba.jvm.sandbox.api.listener.ext.AdviceAdapterListener.switchEvent(AdviceAdapterListener.java:99)
+	at com.alibaba.jvm.sandbox.api.listener.ext.AdviceAdapterListener.onEvent(AdviceAdapterListener.java:39)
+	at com.alibaba.jvm.sandbox.core.enhance.weaver.EventListenerHandler.handleEvent(EventListenerHandler.java:117)
+	at com.alibaba.jvm.sandbox.core.enhance.weaver.EventListenerHandler.handleOnBefore(EventListenerHandler.java:353)
+	at java.com.alibaba.jvm.sandbox.spy.Spy.spyMethodOnBefore(Spy.java:164)
+	at com.yucx.exercise.service.TestServiceImpl.getRandomVal(TestServiceImpl.java)
+	at com.yucx.exercise.controller.TestControllerV1.index1(TestControllerV1.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-10 10:51:37 default INFO  force unloading all loaded modules:[sandbox-info, sandbox-module-mgr, sandbox-control, test-module-1]
+2020-07-10 10:51:37 default INFO  unloading module, module=sandbox-info;class=com.alibaba.jvm.sandbox.module.mgr.InfoModule;
+2020-07-10 10:51:37 default INFO  frozen module, module=sandbox-info;class=com.alibaba.jvm.sandbox.module.mgr.InfoModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:37 default INFO  unloading module, module=sandbox-module-mgr;class=com.alibaba.jvm.sandbox.module.mgr.ModuleMgrModule;
+2020-07-10 10:51:37 default INFO  frozen module, module=sandbox-module-mgr;class=com.alibaba.jvm.sandbox.module.mgr.ModuleMgrModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:37 default INFO  unloading module, module=sandbox-control;class=com.alibaba.jvm.sandbox.module.mgr.ControlModule;
+2020-07-10 10:51:37 default INFO  frozen module, module=sandbox-control;class=com.alibaba.jvm.sandbox.module.mgr.ControlModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;
+2020-07-10 10:51:37 default INFO  ModuleJarClassLoader=ModuleJarClassLoader[crc32=681227813;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;] will be close: all module unloaded.
+2020-07-10 10:51:37 default INFO  unloading module-jar: onJarUnLoadCompleted() loader=ModuleJarClassLoader[crc32=681227813;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\module\sandbox-mgr-module.jar;];moduleJarUnLoadSpi=com.alibaba.jvm.sandbox.module.mgr.OnJarUnLoadCompleted;
+2020-07-10 10:51:37 default INFO  unloading module, module=test-module-1;class=com.alibaba.jvm.sandbox.module.testservice.TestServiceImplModule;
+2020-07-10 10:51:37 default INFO  frozen module, module=test-module-1;class=com.alibaba.jvm.sandbox.module.testservice.TestServiceImplModule;module-jar=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar;
+2020-07-10 10:51:37 default INFO  frozen listener[id=1001;target=com.alibaba.jvm.sandbox.api.listener.ext.AdviceAdapterListener@ed5456c;]
+2020-07-10 10:51:37 default INFO  release all SandboxClassFileTransformer for module=test-module-1
+2020-07-10 10:51:37 default INFO  watch=1000 in module=test-module-1 found 1 classes for delete.
+2020-07-10 10:51:37 default INFO  watch=1000 in module=test-module-1 single reTransform class com.yucx.exercise.service.TestServiceImpl success, at index=0;total=1;
+2020-07-10 10:51:37 default INFO  ModuleJarClassLoader=ModuleJarClassLoader[crc32=2049065845;file=E:\ucarinc_workspace\self\demo_exercise2\share-tech\sandbox-stable-bin\sandbox\sandbox-module\test-service-module-1.3.1.jar;] will be close: all module unloaded.
+2020-07-10 10:51:37 default INFO  server[127.0.0.1:8082] is stopping
+2020-07-10 10:51:37 default INFO  stopped o.e.j.s.ServletContextHandler{/sandbox/default,null}
+2020-07-10 10:51:37 default INFO  server[127.0.0.1:8082] is destroying

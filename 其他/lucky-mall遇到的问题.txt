@@ -1,0 +1,7 @@
+1.fastdfs外网穿透问题，storage中tracker_server的配置，--->一般建议是在内网中使用文件服务集群
+2.fastdfs的jar包在中央仓库是没有的，可以将源码down下来，mvn clean install  安装在自己的仓库中，注意坐标配置是否正确
+3.aop拦截服务链路的时候，在其中获取request时，检查在项目启动时是否会去获取request，如果去获取了，则request为空，可以通过检查拦截路径是否配置正确或者在代码中做逻辑判断
+4.项目配置成ssl协议访问，在项目中自己生成的证书，浏览器中会去拦截，可以配置信任自己的证书，或者自己去ca注册一个证书
+5.配置全局异常处理，在容器中添加MappingJackson2JsonView jsonView()；ModelAndView的viewname就是jsonview，即容器中MappingJackson2JsonView 的id
+6.使用dockerfile进行项目部署，docker环境搭建成功之后，注意开启外网访问端口即2375端口；项目配置中，最主要的就是配置DOCKER_HOST环境变量，还有权限认证
+

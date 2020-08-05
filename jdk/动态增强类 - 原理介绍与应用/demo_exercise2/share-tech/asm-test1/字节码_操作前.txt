@@ -1,0 +1,160 @@
+Classfile /E:/ucarinc_workspace/self/demo_exercise2/share-tech/asm-test1/src/main/java/com/yucx/exercise/calcu_method_cost_time/TestServiceImpl.class
+Last modified 2020-7-6; size 1100 bytes
+        MD5 checksum ab9d7db3b257c78ee91facfd65fa3cc4
+        Compiled from "TestServiceImpl.java"
+public class com.yucx.exercise.calcu_method_cost_time.TestServiceImpl
+        minor version: 0
+        major version: 52
+        flags: ACC_PUBLIC, ACC_SUPER
+        Constant pool:
+        #1 = Methodref          #19.#32        // java/lang/Object."<init>":()V
+        #2 = Methodref          #33.#34        // java/lang/Integer.intValue:()I
+        #3 = Methodref          #33.#35        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        #4 = Class              #36            // java/util/Random
+        #5 = Methodref          #4.#32         // java/util/Random."<init>":()V
+        #6 = Methodref          #4.#37         // java/util/Random.nextInt:(I)I
+        #7 = Methodref          #38.#39        // java/lang/Thread.sleep:(J)V
+        #8 = Class              #40            // java/lang/InterruptedException
+        #9 = Methodref          #8.#41         // java/lang/InterruptedException.printStackTrace:()V
+        #10 = Fieldref           #42.#43        // java/lang/System.out:Ljava/io/PrintStream;
+        #11 = Class              #44            // java/lang/StringBuilder
+        #12 = Methodref          #11.#32        // java/lang/StringBuilder."<init>":()V
+        #13 = String             #45            // getRandomVal error:
+        #14 = Methodref          #11.#46        // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        #15 = Methodref          #8.#47         // java/lang/InterruptedException.getMessage:()Ljava/lang/String;
+        #16 = Methodref          #11.#48        // java/lang/StringBuilder.toString:()Ljava/lang/String;
+        #17 = Methodref          #49.#50        // java/io/PrintStream.println:(Ljava/lang/String;)V
+        #18 = Class              #51            // com/yucx/exercise/calcu_method_cost_time/TestServiceImpl
+        #19 = Class              #52            // java/lang/Object
+        #20 = Utf8               <init>
+  #21 = Utf8               ()V
+          #22 = Utf8               Code
+          #23 = Utf8               LineNumberTable
+          #24 = Utf8               getRandomVal
+          #25 = Utf8               (Ljava/lang/Integer;)Ljava/lang/Integer;
+          #26 = Utf8               StackMapTable
+          #27 = Class              #51            // com/yucx/exercise/calcu_method_cost_time/TestServiceImpl
+          #28 = Class              #53            // java/lang/Integer
+          #29 = Class              #40            // java/lang/InterruptedException
+          #30 = Utf8               SourceFile
+          #31 = Utf8               TestServiceImpl.java
+          #32 = NameAndType        #20:#21        // "<init>":()V
+          #33 = Class              #53            // java/lang/Integer
+          #34 = NameAndType        #54:#55        // intValue:()I
+          #35 = NameAndType        #56:#57        // valueOf:(I)Ljava/lang/Integer;
+          #36 = Utf8               java/util/Random
+          #37 = NameAndType        #58:#59        // nextInt:(I)I
+          #38 = Class              #60            // java/lang/Thread
+          #39 = NameAndType        #61:#62        // sleep:(J)V
+          #40 = Utf8               java/lang/InterruptedException
+          #41 = NameAndType        #63:#21        // printStackTrace:()V
+          #42 = Class              #64            // java/lang/System
+          #43 = NameAndType        #65:#66        // out:Ljava/io/PrintStream;
+          #44 = Utf8               java/lang/StringBuilder
+          #45 = Utf8               getRandomVal error:
+          #46 = NameAndType        #67:#68        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+          #47 = NameAndType        #69:#70        // getMessage:()Ljava/lang/String;
+          #48 = NameAndType        #71:#70        // toString:()Ljava/lang/String;
+          #49 = Class              #72            // java/io/PrintStream
+          #50 = NameAndType        #73:#74        // println:(Ljava/lang/String;)V
+          #51 = Utf8               com/yucx/exercise/calcu_method_cost_time/TestServiceImpl
+          #52 = Utf8               java/lang/Object
+          #53 = Utf8               java/lang/Integer
+          #54 = Utf8               intValue
+          #55 = Utf8               ()I
+          #56 = Utf8               valueOf
+          #57 = Utf8               (I)Ljava/lang/Integer;
+          #58 = Utf8               nextInt
+          #59 = Utf8               (I)I
+          #60 = Utf8               java/lang/Thread
+          #61 = Utf8               sleep
+          #62 = Utf8               (J)V
+          #63 = Utf8               printStackTrace
+          #64 = Utf8               java/lang/System
+          #65 = Utf8               out
+          #66 = Utf8               Ljava/io/PrintStream;
+          #67 = Utf8               append
+          #68 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+          #69 = Utf8               getMessage
+          #70 = Utf8               ()Ljava/lang/String;
+          #71 = Utf8               toString
+          #72 = Utf8               java/io/PrintStream
+          #73 = Utf8               println
+          #74 = Utf8               (Ljava/lang/String;)V
+          {
+public com.yucx.exercise.calcu_method_cost_time.TestServiceImpl();
+        descriptor: ()V
+        flags: ACC_PUBLIC
+        Code:
+        stack=1, locals=1, args_size=1
+        0: aload_0
+        1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+        4: return
+        LineNumberTable:
+        line 13: 0
+
+public java.lang.Integer getRandomVal(java.lang.Integer);
+        descriptor: (Ljava/lang/Integer;)Ljava/lang/Integer;
+        flags: ACC_PUBLIC
+        Code:
+        stack=3, locals=4, args_size=2
+        0: aload_1
+        1: ifnull        14
+        4: aload_1
+        5: invokevirtual #2                  // Method java/lang/Integer.intValue:()I
+        8: sipush        500
+        11: if_icmpge     21
+        14: sipush        500
+        17: invokestatic  #3                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        20: astore_1
+        21: new           #4                  // class java/util/Random
+        24: dup
+        25: invokespecial #5                  // Method java/util/Random."<init>":()V
+        28: aload_1
+        29: invokevirtual #2                  // Method java/lang/Integer.intValue:()I
+        32: invokevirtual #6                  // Method java/util/Random.nextInt:(I)I
+        35: istore_2
+        36: iload_2
+        37: i2l
+        38: invokestatic  #7                  // Method java/lang/Thread.sleep:(J)V
+        41: goto          77
+        44: astore_3
+        45: aload_3
+        46: invokevirtual #9                  // Method java/lang/InterruptedException.printStackTrace:()V
+        49: getstatic     #10                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        52: new           #11                 // class java/lang/StringBuilder
+        55: dup
+        56: invokespecial #12                 // Method java/lang/StringBuilder."<init>":()V
+        59: ldc           #13                 // String getRandomVal error:
+        61: invokevirtual #14                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        64: aload_3
+        65: invokevirtual #15                 // Method java/lang/InterruptedException.getMessage:()Ljava/lang/String;
+        68: invokevirtual #14                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        71: invokevirtual #16                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        74: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        77: iload_2
+        78: invokestatic  #3                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        81: areturn
+        Exception table:
+        from    to  target type
+        36    41    44   Class java/lang/InterruptedException
+        LineNumberTable:
+        line 21: 0
+        line 22: 14
+        line 25: 21
+        line 28: 36
+        line 32: 41
+        line 29: 44
+        line 30: 45
+        line 31: 49
+        line 34: 77
+        StackMapTable: number_of_entries = 4
+        frame_type = 14 /* same */
+        frame_type = 6 /* same */
+        frame_type = 255 /* full_frame */
+        offset_delta = 22
+        locals = [ class com/yucx/exercise/calcu_method_cost_time/TestServiceImpl, class java/lang/Integer, int ]
+        stack = [ class java/lang/InterruptedException ]
+        frame_type = 32 /* same */
+        }
+        SourceFile: "TestServiceImpl.java"

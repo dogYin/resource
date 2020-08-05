@@ -1,0 +1,61 @@
+第一章：初识kafka
+	offset可以保证消息在分区中的顺序
+	要想消息有序，那么就给当前topic只设置一个分区
+	分区可以分散在不同的broker上
+	分区的存在避免了单文件IO成为性能瓶颈
+	
+	kafka引入了分区多副本（Replica）机制->一主多从
+	AR(分区副本集) = ISR(可忍受范围内同步消息副本)+OSR(不可忍受的同步范围消息副本)->正常情况下OSR=0
+	ISR中的同步状态在leader副本中维护
+	
+	消费者只能拉取HW之前的消息
+	HW:ISR集合中选取offset最小的  HW=OFFSET+1
+	LEO（Log End Offset）:leader中下一条消息写入的offset 即ISR集合中offset最大的 LEO = offset + 1
+
+第二章：生产者
+	KafkaProducer是线程安全的，多个线程可以共享其单个实例
+	消息发送模式：发后即忘（fire-and-forget）,同步（sync）,异步（async）
+	发后即忘：性能最好，可靠性最差
+	同步：性能最差，可靠性最高，消息要么发送成功 要么异常
+	分区器：key is null ? 轮循发送至各个分区 ：使用MurmmurHash2算法
+	自定义分区器实现Partitioner
+	生产者线程：主线程 + Sender线程
+	拦截器(主线程) -> 序列化器(主线程) -> 分区器(主线程) -> 消息累加器 -> Sender线程
+	消息累加器：缓存消息方便Sender批量发送，为每个分区维护一个双端队列，BufferPool复用ByteBuffer开辟空间
+	消息发送格式：<Node,List<ProducerBatch>>  ProducerBatch是ProducerRecord的集合
+	消息发送同时会在InFlightRequests中以Map<NodeId,Deque<Request>>形式保存一份，缓存的是那些没有Response的消息
+	
+第三章：消费者
+	KafkaConsumer是非线程安全的，用acquire方法可以检测当前是否只有一个线程执行，wakeup方法线程安全
+	每一个分区只能被一个消费组中的一个消费者所消费
+	可以通过增加消费组中的消费者个数提高topic的消费能力
+	kafka中的消费是基于拉模式（使用poll()方法轮询拉取）
+	消费者每次拉取消息之后需要提交当前的消费位移
+	消费位移永久存储在kafka内部主题_consumer_offsets
+	如果不能有效的设计提交位移时机，有可能会造成重复消费和消息丢失
+	位移提交分为手动和自动提交
+	手动提交：同步提交和异步提交
+	再均衡：一个分区的消费所属权移交给另一个分区
+	应该尽量避免再均衡的发生
+	提升消费能力：基于滑动窗口实现多线程消费
+	
+第四章：主题与分区
+	创建主题：1.kafka-topic.sh -> kafka.admin.TopicCommand    2.KafkaAdminClient
+	分区副本的分配根据是否配置了机架信息（broker.rack），使用两种策略
+	分区的修改只支持添加分区不支持修改分区
+	只有leader副本菜可以对外提供读写服务，follower副本只进行内部消息同步
+	当leader副本挂掉之后其中一个follower节点会变成leader节点，造成分区负载不均衡，kafka引入了优先副本的概念
+	优先副本就是在AR集合中的第一个副本，但这样还是达不到集群负载，因为不同分区TPS不同
+	kafka可配置分区自动平衡
+	分区重分配在集群扩容、broker节点失效的场景下可以对分区进行迁移，如果old分区不迁移，会造成集群严重的不平衡
+	在分区重分配中大量的使用到了数据复制，因为数据复制会占用额外资源，重分配量太大严重影响性能。
+	减小重分配粒度是防止数据复制影响的一种方法，但是当单分区流量很大是减小粒度就心有余力不足了；kafka提供了一种叫复制限流的方案
+	可以使用kafka-config-.sh和kafka-reassign-partitions.sh两个脚本实现。
+	follower.replication.throttled.rate该参数控制follower副本的复制速度
+	leader.replication.throttled.rate该参数控制leader副本的传输速度
+
+第五章：日志储存
+	
+	
+	
+	

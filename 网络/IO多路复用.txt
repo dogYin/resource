@@ -1,0 +1,56 @@
+https://www.bilibili.com/video/BV1qJ411w7du?from=search&seid=4106178241765282835
+
+关于select函数
+我定义一个bitmap，bitmap中的每一位置对应每一个文件描述符，然后while（true）循环
+通过select函数将用户态的bitmap复制到内核态当中，然后由内核态进行判断，是否有数据
+如果某个fds文件有数据的话，就返回，并且将对应的位置置位
+
+1.1024的bitmap这个值是有大小限制的
+2.FDset不可重用
+3.用户态拷贝到内核态需要一定的开销
+4.需要O(n)复杂度：需要再遍历一下bitmap才能知道哪个位置被置位了
+
+
+poll：引入了一个结构体
+struct pollfd{
+	int fd;
+	short events;
+	short revents;
+}
+
+poll阻塞函数
+
+内核置位：置位的是revents置位，如果有数据来了就被职位为pollin
+哪个位置有数据的话，就将哪个位置的数据进行操作读取出来，并且置位，置位的是有数据的位置
+这个可以重用
+
+1.解决了bitmap1024大小的限制
+2.每次只需要恢复revents字段，而不用对所有的进行恢复。
+
+
+epoll函数
+epoll水平触发与边缘触发
+http://blog.chinaunix.net/uid-20775448-id-3603224.html
+
+
+
+关于poll,select,epoll
+https://blog.csdn.net/zgege/article/details/81632990
+https://blog.csdn.net/zgege/article/details/81632990
+https://baijiahao.baidu.com/s?id=1659150223394519205&wfr=spider&for=pc
+
+
+*https://blog.csdn.net/qq546770908/article/details/53082870?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+*https://blog.csdn.net/songchuwang1868/article/details/89877739
+
+https://zhuanlan.zhihu.com/p/94735130
+
+关于水平触发和边缘触发
+https://blog.csdn.net/liuhengxiao/article/details/46911129?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-2.nonecase
+
+
+
+
+一篇非常详细的文章：
+http://blog.chinaunix.net/uid-28541347-id-4273856.html

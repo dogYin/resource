@@ -1,0 +1,143 @@
+package asm.com.yucx.exercise.service;
+
+import java.util.*;
+
+import org.objectweb.asm.*;
+
+public class TestServiceImplDump implements Opcodes {
+
+    public static byte[] dump() throws Exception {
+
+        ClassWriter cw = new ClassWriter(0);
+        FieldVisitor fv;
+        MethodVisitor mv;
+        AnnotationVisitor av0;
+
+        cw.visit(52, ACC_PUBLIC + ACC_SUPER, "com/yucx/exercise/service/TestServiceImpl", null, "java/lang/Object", null);
+
+        cw.visitSource("TestServiceImpl.java", null);
+
+        {
+            av0 = cw.visitAnnotation("Lorg/springframework/stereotype/Service;", true);
+            av0.visitEnd();
+        }
+        {
+            fv = cw.visitField(ACC_PRIVATE + ACC_FINAL + ACC_STATIC, "log", "Lorg/slf4j/Logger;", null, null);
+            fv.visitEnd();
+        }
+        {
+            mv = cw.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
+            mv.visitCode();
+            Label l0 = new Label();
+            mv.visitLabel(l0);
+            mv.visitLineNumber(17, l0);
+            mv.visitVarInsn(ALOAD, 0);
+            mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
+            mv.visitInsn(RETURN);
+            Label l1 = new Label();
+            mv.visitLabel(l1);
+            mv.visitLocalVariable("this", "Lcom/yucx/exercise/service/TestServiceImpl;", null, l0, l1, 0);
+            mv.visitMaxs(1, 1);
+            mv.visitEnd();
+        }
+        {
+            mv = cw.visitMethod(ACC_PUBLIC, "getRandomVal", "(Ljava/lang/Integer;)Ljava/lang/Integer;", null, null);
+            mv.visitParameter("maxRandom", 0);
+            mv.visitCode();
+            Label l0 = new Label();
+            Label l1 = new Label();
+            Label l2 = new Label();
+            mv.visitTryCatchBlock(l0, l1, l2, "java/lang/InterruptedException");
+            Label l3 = new Label();
+            mv.visitLabel(l3);
+            mv.visitLineNumber(26, l3);
+            mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
+            mv.visitTypeInsn(NEW, "java/lang/StringBuilder");
+            mv.visitInsn(DUP);
+            mv.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "<init>", "()V", false);
+            mv.visitLdcInsn("parameter:");
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append", "(Ljava/lang/String;)Ljava/lang/StringBuilder;", false);
+            mv.visitVarInsn(ALOAD, 1);
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append", "(Ljava/lang/Object;)Ljava/lang/StringBuilder;", false);
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "toString", "()Ljava/lang/String;", false);
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
+            Label l4 = new Label();
+            mv.visitLabel(l4);
+            mv.visitLineNumber(27, l4);
+            mv.visitVarInsn(ALOAD, 1);
+            Label l5 = new Label();
+            mv.visitJumpInsn(IFNULL, l5);
+            mv.visitVarInsn(ALOAD, 1);
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/Integer", "intValue", "()I", false);
+            mv.visitIntInsn(SIPUSH, 500);
+            Label l6 = new Label();
+            mv.visitJumpInsn(IF_ICMPGE, l6);
+            mv.visitLabel(l5);
+            mv.visitLineNumber(28, l5);
+            mv.visitFrame(Opcodes.F_SAME, 0, null, 0, null);
+            mv.visitIntInsn(SIPUSH, 500);
+            mv.visitMethodInsn(INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;", false);
+            mv.visitVarInsn(ASTORE, 1);
+            mv.visitLabel(l6);
+            mv.visitLineNumber(31, l6);
+            mv.visitFrame(Opcodes.F_SAME, 0, null, 0, null);
+            mv.visitTypeInsn(NEW, "java/util/Random");
+            mv.visitInsn(DUP);
+            mv.visitMethodInsn(INVOKESPECIAL, "java/util/Random", "<init>", "()V", false);
+            mv.visitVarInsn(ALOAD, 1);
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/Integer", "intValue", "()I", false);
+            mv.visitMethodInsn(INVOKEVIRTUAL, "java/util/Random", "nextInt", "(I)I", false);
+            mv.visitVarInsn(ISTORE, 2);
+            mv.visitLabel(l0);
+            mv.visitLineNumber(34, l0);
+            mv.visitVarInsn(ILOAD, 2);
+            mv.visitInsn(I2L);
+            mv.visitMethodInsn(INVOKESTATIC, "java/lang/Thread", "sleep", "(J)V", false);
+            mv.visitLabel(l1);
+            mv.visitLineNumber(37, l1);
+            Label l7 = new Label();
+            mv.visitJumpInsn(GOTO, l7);
+            mv.visitLabel(l2);
+            mv.visitLineNumber(35, l2);
+            mv.visitFrame(Opcodes.F_FULL, 3, new Object[]{"com/yucx/exercise/service/TestServiceImpl", "java/lang/Integer", Opcodes.INTEGER}, 1, new Object[]{"java/lang/InterruptedException"});
+            mv.visitVarInsn(ASTORE, 3);
+            Label l8 = new Label();
+            mv.visitLabel(l8);
+            mv.visitLineNumber(36, l8);
+            mv.visitFieldInsn(GETSTATIC, "com/yucx/exercise/service/TestServiceImpl", "log", "Lorg/slf4j/Logger;");
+            mv.visitLdcInsn("getRandomVal error:");
+            mv.visitVarInsn(ALOAD, 3);
+            mv.visitMethodInsn(INVOKEINTERFACE, "org/slf4j/Logger", "error", "(Ljava/lang/String;Ljava/lang/Throwable;)V", true);
+            mv.visitLabel(l7);
+            mv.visitLineNumber(39, l7);
+            mv.visitFrame(Opcodes.F_SAME, 0, null, 0, null);
+            mv.visitVarInsn(ILOAD, 2);
+            mv.visitMethodInsn(INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;", false);
+            mv.visitInsn(ARETURN);
+            Label l9 = new Label();
+            mv.visitLabel(l9);
+            mv.visitLocalVariable("e", "Ljava/lang/InterruptedException;", null, l8, l7, 3);
+            mv.visitLocalVariable("this", "Lcom/yucx/exercise/service/TestServiceImpl;", null, l3, l9, 0);
+            mv.visitLocalVariable("maxRandom", "Ljava/lang/Integer;", null, l3, l9, 1);
+            mv.visitLocalVariable("randomVal", "I", null, l0, l9, 2);
+            mv.visitMaxs(3, 4);
+            mv.visitEnd();
+        }
+        {
+            mv = cw.visitMethod(ACC_STATIC, "<clinit>", "()V", null, null);
+            mv.visitCode();
+            Label l0 = new Label();
+            mv.visitLabel(l0);
+            mv.visitLineNumber(15, l0);
+            mv.visitLdcInsn(Type.getType("Lcom/yucx/exercise/service/TestServiceImpl;"));
+            mv.visitMethodInsn(INVOKESTATIC, "org/slf4j/LoggerFactory", "getLogger", "(Ljava/lang/Class;)Lorg/slf4j/Logger;", false);
+            mv.visitFieldInsn(PUTSTATIC, "com/yucx/exercise/service/TestServiceImpl", "log", "Lorg/slf4j/Logger;");
+            mv.visitInsn(RETURN);
+            mv.visitMaxs(1, 0);
+            mv.visitEnd();
+        }
+        cw.visitEnd();
+
+        return cw.toByteArray();
+    }
+}
