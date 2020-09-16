@@ -55,7 +55,21 @@
 	leader.replication.throttled.rate该参数控制leader副本的传输速度
 
 第五章：日志储存
-	
-	
+	kafka消息模型在processon上可查看
+	向日志中追加消息是顺序写入的，只有最后一个LogSegment才可以写入消息，其他的都不可以写入
+	kafaka历史日志版本：V0，V1，V2 
+	V0: LOG_OVERHEAD + RECORD -> LOG_OVERHEAD(12B):offset + message_size
+	V0,V1,V2版本之间的区别在RECORD具体区别可以移步至processon查看
+	消息压缩：gzip,snappy,lz4
+	kafka采用稀疏索引构建消息索引，
+	日志分段采用了跳跃表结构
+	通过MappedByteBuffer将索引文件映射到内存中，用以加快索引的查询速度
+	偏移量索引：存的消息相对偏移量和物理地址
+	时间戳索引：当前日志分段最大的时间戳和时间戳对应消息的相对偏移量
+	日志清理：按照保留策略+日志压缩
+	保留策略：基于时间保留策略，删除不在保留时间内的日志；基于日志大小保留策略；基于起始偏移量保留策略
+	日志压缩：将key合并到最新的一条消息
+	kafka将消息通过顺序写写入磁盘，磁盘顺序写的性能比随机写高6000倍，而且基于顺序写还可以预读和后写；还有页缓存；
+	kafka大量的使用了页缓存，零拷贝
 	
 	
